@@ -4,7 +4,7 @@
 
 You can install either manually or via npm.  The latter is very simple:
 
-    npm install --save codemirror-find-and-replace-dialog
+    npm install codemirror-find-and-replace-dialog
 
 ## Usage
 
