@@ -1,0 +1,40 @@
+{
+  "name": "codemirror-find-and-replace-dialog",
+  "version": "1.0.0",
+  "description": "A revised search interface for the default CodeMirror search addon, similar to Chrome's find text on page dialog",
+  "main": "dist/search.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel src/dialog.js --out-file dist/dialog.js --source-maps && babel src/search.js --out-file dist/search.js --source-maps",
+    "copyCss": "copyfiles src/dialog.css dialog.css dist -f",
+    "prebuild": "rimraf dist && mkdirp dist",
+    "build": "npm run babel && npm run copyCss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaptainT33mo/codemirror-find-and-replace-dialog"
+  },
+  "keywords": [
+    "codemirror",
+    "search",
+    "find",
+    "replace",
+    "dialog"
+  ],
+  "author": "Vibhor Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaptainT33mo/codemirror-find-and-replace-dialog/issues"
+  },
+  "homepage": "hhttps://github.com/CaptainT33mo/codemirror-find-and-replace-dialog#readme",
+  "peerDependencies": {
+    "codemirror": "^5.21.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "copyfiles": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.1"
+  }
+}
