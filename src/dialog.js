@@ -126,7 +126,7 @@
             behaviour.callback(inputs, e);
           });
         } else {
-          CodeMirror.on(buttons[i], "click", () => {
+          CodeMirror.on(buttons[i], "click", (e) => {
             CodeMirror.e_preventDefault(e);
             closePanel(this);
           });
