@@ -82,20 +82,17 @@
 
         if (behaviour.onInput) {
           CodeMirror.on(input, "input", (e) => {
-              CodeMirror.e_preventDefault(e);
             behaviour.onInput(inputs, e);
           });
         }
 
         if (behaviour.onKeyUp) {
           CodeMirror.on(input, "keyup", (e) => {
-              CodeMirror.e_preventDefault(e);
             behaviour.onKeyUp(inputs, e);
           });
         }
 
         CodeMirror.on(input, "keydown", (e) => {
-            CodeMirror.e_preventDefault(e);
           if (behaviour.onKeyDown && behaviour.onKeyDown(inputs, e)) {
             return;
           }
@@ -108,6 +105,7 @@
             CodeMirror.e_stop(e);
             closePanel(this);
           } else if (e.keyCode === 13 && behaviour.callback) {
+            CodeMirror.e_preventDefault(e);
             behaviour.callback(inputs, e);
           }
         });
@@ -124,10 +122,12 @@
         let behaviour = options.buttonBehaviour[i];
         if (!!behaviour.callback) {
           CodeMirror.on(buttons[i], "click", (e) => {
+            CodeMirror.e_preventDefault(e);
             behaviour.callback(inputs, e);
           });
         } else {
           CodeMirror.on(buttons[i], "click", () => {
+            CodeMirror.e_preventDefault(e);
             closePanel(this);
           });
         }
