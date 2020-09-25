@@ -10,9 +10,10 @@
   /* border: 1px solid #eee; */
   position: relative;
   z-index: 10;
+  border-bottom: 1px solid #737370;
 }
 .CodeMirror-find-and-replace-dialog--replace-container {
-    width: 100%;
+  width: 100%;
 }
 
 .CodeMirror-find-and-replace-dialog input {
