@@ -36,8 +36,5 @@
     "copyfiles": "^1.2.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.1"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
