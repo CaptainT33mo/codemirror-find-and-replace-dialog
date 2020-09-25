@@ -2,3 +2,6 @@ node_modules
 dist
 npm-debug.log
 package-lock.json
+index.html
+codemirror-5.58.1
+.DS_Store

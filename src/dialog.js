@@ -15,7 +15,7 @@
 })((CodeMirror) => {
   let createPanel = (cm, template, bottom) => {
     let el = document.createElement("div");
-    el.className = "CodeMirror-advanced-dialog";
+    el.className = "CodeMirror-find-and-replace-dialog";
 
     if (typeof template == "string") {
       el.innerHTML = template;
@@ -30,7 +30,7 @@
   };
 
   let closePanel = (cm) => {
-    let state = cm.state.advancedDialog;
+    let state = cm.state.findAndReplaceDialog;
     if (!state || !state.current) {
       return;
     }
@@ -42,22 +42,22 @@
     cm.focus();
   };
 
-  CodeMirror.defineExtension("openAdvancedDialog", function (
+  CodeMirror.defineExtension("openFindAndReplaceDialog", function (
     template,
     options
   ) {
     if (!this.addPanel) {
-      throw `CodeMirror-AdvancedDialog requires the panel addon to be included in the page.  This can usually be found in the addons folder of the default CodeMirror installation, and must be included BEFORE the AdvancedDialog addon.`;
+      throw `CodeMirror-FindAndReplaceDialog requires the panel addon to be included in the page.  This can usually be found in the addons folder of the default CodeMirror installation, and must be included BEFORE the FindAndReplaceDialog addon.`;
     }
     if (!options) options = {};
-    if (!this.state.advancedDialog) this.state.advancedDialog = {};
+    if (!this.state.findAndReplaceDialog) this.state.findAndReplaceDialog = {};
 
-    if (this.state.advancedDialog.current) {
+    if (this.state.findAndReplaceDialog.current) {
       closePanel(this);
     }
 
     let panel = createPanel(this, template, options.bottom);
-    this.state.advancedDialog.current = {
+    this.state.findAndReplaceDialog.current = {
       panel: panel,
       onClose: options.onClose,
     };

@@ -17,4 +17,4 @@ import "codemirror-find-and-replace-dialog/dist/dialog.css";
 
 ## Dependencies
 
-Obviously you need to include CodeMirror in the page.  You also need to include `addons/display/panel.js` from the CodeMirror default installation.
+Obviously you need to include CodeMirror in the page.  You also need to include `addon/display/panel.js` from the CodeMirror default installation.
