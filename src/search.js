@@ -420,7 +420,7 @@
   };
 
   CodeMirror.commands.find = (cm) => {
-    if (cm.getOption("readOnly")) return;
+    // if (cm.getOption("readOnly")) return;
     clearSearch(cm);
     let state = getSearchState(cm);
     var query = cm.getSelection() || getSearchState(cm).lastQuery;
