@@ -161,14 +161,40 @@
     return query;
   };
 
+  /* Old */
+  // let startSearch = (cm, state, query) => {
+  //   if (!query || query === "") return;
+  //   state.queryText = query;
+  //   state.query = parseQuery(query);
+  //   cm.removeOverlay(state.overlay, queryCaseInsensitive(state.query));
+  //   state.overlay = searchOverlay(
+  //     state.query,
+  //     queryCaseInsensitive(state.query)
+  //   );
+  //   cm.addOverlay(state.overlay);
+  //   if (cm.showMatchesOnScrollbar) {
+  //     if (state.annotate) {
+  //       state.annotate.clear();
+  //       state.annotate = null;
+  //     }
+  //     state.annotate = cm.showMatchesOnScrollbar(
+  //       state.query,
+  //       queryCaseInsensitive(state.query)
+  //     );
+  //   }
+  // };
+
+  /* New */
   let startSearch = (cm, state, query) => {
     if (!query || query === "") return;
     state.queryText = query;
     state.query = parseQuery(query);
-    cm.removeOverlay(state.overlay, queryCaseInsensitive(state.query));
+    // cm.removeOverlay(state.overlay, queryCaseInsensitive(state.query));
+    cm.removeOverlay(state.overlay, true);
     state.overlay = searchOverlay(
       state.query,
-      queryCaseInsensitive(state.query)
+      // queryCaseInsensitive(state.query)
+      true
     );
     cm.addOverlay(state.overlay);
     if (cm.showMatchesOnScrollbar) {
@@ -178,7 +204,8 @@
       }
       state.annotate = cm.showMatchesOnScrollbar(
         state.query,
-        queryCaseInsensitive(state.query)
+        // queryCaseInsensitive(state.query)
+        true
       );
     }
   };
